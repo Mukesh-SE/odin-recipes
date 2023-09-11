@@ -30,32 +30,36 @@ main {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-	text-align: center;
 
 	position: relative;
-
 	&::after {
 		content: "";
-		width: 55%;
-		height: 55%;
 		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		z-index: 0;
-		background-color: rgba(255, 255, 255, 0.1);
-		border: 2px solid rgba(255, 255, 255, 0.483);
-		border-radius: 20px;
-		backdrop-filter: blur(9px);
-		-webkit-backdrop-filter: blur(9px);
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+			90deg,
+			rgba(0, 0, 0, 1) -15%,
+			rgba(0, 0, 0, 0.4) 50%
+		);
+		z-index: 1;
+	}
+
+	& .main-content {
+		padding: 20px;
+		width: 40%;
+		height: 80%;
+		position: relative;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 
 	& h1,
 	p {
-		max-width: 40%;
-		position: relative;
-		z-index: 1;
 		line-height: 1.4;
 	}
 	& h1 {
@@ -100,9 +104,13 @@ section ul {
 		justify-content: center;
 		position: relative;
 		overflow: hidden;
+
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
 	}
 	& .recipe-1 {
-		background: url("./assets/Stuffed\ Peppers.png");
+		background-image: url("./assets/Stuffed\ Peppers.png");
 	}
 	& .recipe-2 {
 		background-image: url("./assets/Old\ School\ Mac\ n'\ Cheese.png");
@@ -116,18 +124,27 @@ section ul {
 	content: "";
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 255, 0.1);
+	background-color: rgba(0, 0, 0, 0.4);
 	position: absolute;
+	z-index: 1;
 }
 
+&:hover {
+	cursor: pointer;
+}
 li {
-   &:hover{
-      cursor: pointer;
-   }
+	padding: 5px 10px;
+	text-align: center;
 	& a {
+		width: fit-content;
+		height: fit-content;
+		padding: 8px 15px;
 		text-decoration: none;
 		color: white;
-		font-size: 1.5rem;
+		font-size: 2rem;
+		overflow: hidden;
+		border-color: transparent;
+		z-index: 3;
 	}
 }
 
@@ -147,4 +164,41 @@ li {
 	border: 1px solid rgba(255, 255, 255, 0.3);
 
 	transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+li a {
+	position: relative;
+
+	&::before,
+	&::after {
+		transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+		content: "";
+		width: 100%;
+		height: 5px;
+		background-color: white;
+		border-radius: 100px;
+		position: absolute;
+		z-index: 1;
+		opacity: 0;
+	}
+	&::before {
+		top: 0;
+		left: -100%;
+	}
+	&::after {
+		bottom: 0;
+		right: -100%;
+	}
+	&:hover {
+		background-color: rgb(255, 255, 255, 0.2);
+		backdrop-filter: blur(5px);
+	}
+	&:hover::before {
+		left: 0;
+		opacity: 1;
+	}
+	&:hover::after {
+		right: 0;
+		opacity: 1;
+	}
 }
