@@ -6,16 +6,16 @@ list.forEach((item, index) => {
 	item.addEventListener("mouseover", () => {
 		switch (index) {
 			case 0:
-				move_left = 60;
-				focus_div.style.left = `${move_left}px`;
+				move_left = 4.7 + (index * 32.3);
+				focus_div.style.left = `${move_left}%`;
 				break;
 			case 1:
-				move_left = 60 + 410;
-				focus_div.style.left = `${move_left}px`;
+				move_left = 4.7 + (index * 32.3);
+				focus_div.style.left = `${move_left}%`;
 				break;
 			case 2:
-				move_left = 60 + 410 * 2;
-				focus_div.style.left = `${move_left}px`;
+				move_left = 4.7 + (index * 32.3);
+				focus_div.style.left = `${move_left}%`;
 				break;
 			default:
 				alert("somthing is wrong \n check the console");
