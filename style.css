@@ -112,12 +112,8 @@ main {
 section {
 	margin: 10px 10px;
 	border-radius: 20px;
-	border: 2px solid;
 	min-width: 96%;
 	height: 35%;
-	background-color: rgba(81, 80, 80, 0.2);
-	border-color: wheat;
-	-webkit-backdrop-filter: blur(10px);
 }
 
 section ul {
