@@ -4,9 +4,12 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+html{
+	scroll-behavior: smooth;
+}
 body {
 	font-family: "Poppins", sans-serif;
-	width: 100%;
+	width: screen;
 	height: fit-content;
 	background-color: #232323;
 	display: flex;
@@ -136,7 +139,7 @@ section ul {
 	}
 
 	& .recipe {
-		width: 350px;
+		width: 80%;
 		height: 80%;
 		border-radius: 10px;
 
@@ -190,16 +193,16 @@ li {
 }
 
 #hv {
-	width: 370px;
-	height: 90%;
+	width: 29%;
+	height: 88%;
 
 	position: absolute;
-	left: 2.45%;
+	left: 2%;
 
 	/* From https://css.glass */
 	background: rgba(255, 255, 255, 0.08);
 	border-radius: 16px;
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 10px 1px rgba(158, 157, 157, 0.5);
 	backdrop-filter: blur(6.9px);
 	-webkit-backdrop-filter: blur(6.9px);
 	border: 1px solid rgba(255, 255, 255, 0.3);
@@ -241,5 +244,16 @@ li a {
 	&:hover::after {
 		right: 0;
 		opacity: 1;
+	}
+}
+
+
+/* CSS rules for screens with a maximum width of 768 pixels */
+@media screen and (max-width: 1024px) {
+	body{
+		background-color: red;
+	}
+	li {
+
 	}
 }
