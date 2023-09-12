@@ -27,33 +27,40 @@ list.forEach((item, index) => {
 // -----------------------
 
 // ratting and like
-const rate_star = document.querySelectorAll(".fa-star");
 const heart = document.querySelectorAll(".fa-heart");
+const ratting_group = document.querySelectorAll(".ratting");
 
+console.log(ratting_group)
+// like toggle button
 heart.forEach((item) => {
 	item.addEventListener("click", () => {
 		item.classList.toggle("fas");
 	});
 });
 
-rate_star.forEach((item, index) => {
-	item.addEventListener("click", () => {
-		toogle_star(index);
+// ratting 
+ratting_group.forEach((ratting, ratting_index) => {
+	const rate_star = ratting.querySelectorAll(".fa-star");
+
+	rate_star.forEach((star, start_index) => {
+		star.addEventListener("click", () => {
+			toogle_star(ratting_index, start_index);
+		});
 	});
 });
-function toogle_star(clickeIndex) {
-	let start_index = 0;
-	if (clickeIndex > 4) {
-		start_index = 5;
-	}
-	if (clickeIndex > 9) {
-		start_index = 10;
-	}
-	// console.log(clickeIndex);
-	for (let i = start_index; i <= clickeIndex; i++) {
-		if (rate_star[i].classList.contains("fas")) {
-			rate_star[i].classList.remove("fas");
-		}
+
+function toogle_star(r_index, s_index) {
+	const single_ratting = ratting_group[r_index];
+	const rate_star = single_ratting.querySelectorAll(".fa-star");
+
+
+	console.log(single_ratting);
+
+	rate_star.forEach((star) => {
+		star.classList.remove("fas");
+	});
+
+	for (let i = 0; i <= s_index; i++) {
 		rate_star[i].classList.add("fas");
 	}
 }

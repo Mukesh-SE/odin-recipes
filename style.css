@@ -247,13 +247,12 @@ li a {
 	color: white;
 	background-color: rgba(255, 255, 255, 0.1);
 	backdrop-filter: blur(7px);
-	opacity: 0;	
+	opacity: 0;
 	position: relative;
 	z-index: 1;
-	
-	transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
 
+	transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
 /* hover effect on list item */
 li:hover {
@@ -270,7 +269,12 @@ li:hover {
 		opacity: 1;
 	}
 
-	.review{
+	.review {
 		opacity: 1;
 	}
+}
+
+.fas {
+	-webkit-text-stroke: 2px #da0d62;
+	color: #ffcbec95;
 }
