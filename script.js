@@ -61,7 +61,8 @@ function toogle_star(r_index, s_index) {
 	});
 
 	for (let i = 0; i <= s_index; i++) {
-		rate_star[i].classList.add("fas");
+		rate_star[i].classList.add('fas');
 	}
+	
 }
 // -----------------------
