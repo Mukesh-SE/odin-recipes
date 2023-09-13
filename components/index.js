@@ -3,14 +3,14 @@ const nav_itmes = document.querySelectorAll("li");
 
 let move_left = 0;
 nav_itmes.forEach((item, index) => {
-	item.addEventListener("click", () => {
+	item.addEventListener("mouseover", () => {
 		switch (index) {
 			case 0:
 				move_left = 2;
 				move.style.left = `${move_left}%`;
 				break;
 			case 1:
-				move_left = 23;
+				move_left = 24;
 				move.style.left = `${move_left}%`;
 				break;
 			case 2:
