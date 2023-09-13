@@ -176,12 +176,10 @@ section ul {
 	z-index: 1;
 }
 
-&:hover {
-	cursor: pointer;
-}
 li {
 	text-align: center;
 	& a {
+		cursor: pointer;
 		margin-top: 5px;
 		width: fit-content;
 		height: fit-content;
@@ -236,6 +234,19 @@ li a {
 		bottom: 0;
 		right: -100%;
 	}
+
+	&:hover {
+		background-color: rgb(255, 255, 255, 0.2);
+		backdrop-filter: blur(5px);
+	}
+	&:hover::before {
+		left: 0;
+		opacity: 1;
+	}
+	&:hover::after {
+		right: 0;
+		opacity: 1;
+	}
 }
 
 .review {
@@ -256,18 +267,7 @@ li a {
 
 /* hover effect on list item */
 li:hover {
-	& a {
-		background-color: rgb(255, 255, 255, 0.2);
-		backdrop-filter: blur(5px);
-	}
-	& a::before {
-		left: 0;
-		opacity: 1;
-	}
-	& a::after {
-		right: 0;
-		opacity: 1;
-	}
+
 
 	.review {
 		opacity: 1;
