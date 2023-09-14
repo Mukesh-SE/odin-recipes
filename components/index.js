@@ -1,5 +1,5 @@
 const move = document.getElementById("moveable");
-const nav_itmes = document.querySelectorAll("li");
+const nav_itmes = document.querySelectorAll("nav li");
 
 let move_left = 0;
 nav_itmes.forEach((item, index) => {
