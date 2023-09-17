@@ -1,5 +1,15 @@
+const ul = document.querySelector("ul");
 const list = document.querySelectorAll("li");
 const focus_div = document.getElementById("hv");
+
+//
+ul.addEventListener("mouseover", () => {
+	focus_div.style.display = "block";
+});
+
+ul.addEventListener("mouseleave", () => {
+	focus_div.style.display = "none";
+});
 
 let move_left = 0;
 list.forEach((item, index) => {
@@ -30,7 +40,7 @@ list.forEach((item, index) => {
 const heart = document.querySelectorAll(".fa-heart");
 const ratting_group = document.querySelectorAll(".ratting");
 
-console.log(ratting_group)
+console.log(ratting_group);
 // like toggle button
 heart.forEach((item) => {
 	item.addEventListener("click", () => {
@@ -38,7 +48,7 @@ heart.forEach((item) => {
 	});
 });
 
-// ratting 
+// ratting
 ratting_group.forEach((ratting, ratting_index) => {
 	const rate_star = ratting.querySelectorAll(".fa-star");
 
@@ -53,7 +63,6 @@ function toogle_star(r_index, s_index) {
 	const single_ratting = ratting_group[r_index];
 	const rate_star = single_ratting.querySelectorAll(".fa-star");
 
-
 	console.log(single_ratting);
 
 	rate_star.forEach((star) => {
@@ -61,8 +70,7 @@ function toogle_star(r_index, s_index) {
 	});
 
 	for (let i = 0; i <= s_index; i++) {
-		rate_star[i].classList.add('fas');
+		rate_star[i].classList.add("fas");
 	}
-	
 }
 // -----------------------

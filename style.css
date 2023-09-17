@@ -197,6 +197,8 @@ li {
 	width: 29%;
 	height: 88%;
 
+	display: none;
+
 	position: absolute;
 	left: 2%;
 
